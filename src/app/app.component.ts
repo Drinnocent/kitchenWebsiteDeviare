@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import {FoodService} from './food.service';
 
 @Component({
   selector: 'app-root',

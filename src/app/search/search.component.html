@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="card mt-5" style="align-items:center;">
+      <h1>Search Items By Category</h1>
+    </div>
+    <div class="card mt-5" style="padding:20px;">
+      <form #addF="ngForm">
+        <div class="form-group">
+          <label for="category">Search Item:</label>
+          <input type="text" #category (ngModel)="category" name="category" id="category" class="form-control" placeholder="Search by fruits, vegetables, starch or junk food">
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Login" class="btn btn-primary w-100" (click)="filterItems(category)">
+        </div>
+      </form>
+    </div>
+    <div class="mt-5" *ngIf="isShowTable">
+      <table class="table table-bordered" >
+        <thead class="thead">
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody class="tbody">
+          <tr *ngFor="let food of foodItems">
+            <td>{{food.name}}</td>
+            <td>{{food.price}}</td>
+            <td>{{food.category}}</td>
+            <td>{{food.description}}</td>
+            <td><button type="button" class="btn btn-primary" (click)="passFood(food)" >Buy</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="container" *ngIf="isShowCard">
+    <div class="card text-white bg-success mb-3 center" style="max-width: 18rem;">
+      <div class="card-header">Order Success</div>
+      <div class="card-body">
+        <h5 class="card-title">Thank you For Purchasing</h5>
+        <ul>
+          <li>{{foodV.name}}</li>
+          <li>{{foodV.price}}</li>
+          <li>{{foodV.category}}</li>
+          <li>{{foodV.description}}</li>
+          
+        </ul>
+      </div>
+    </div>
+
+    </div>
+
+   

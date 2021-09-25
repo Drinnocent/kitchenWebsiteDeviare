@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<div class="container">
+    <div class="card mt-5" style="align-items:center;">
+      <h1>Please Login In</h1>
+    </div>
+    <div class="card mt-5" style="padding:20px;">
+      <form #addF="ngForm">
+        <div class="form-group">
+          <label for="name">Username:</label>
+          <input type="text" #name (ngModel)="name" name="name" id="name" class="form-control" placeholder="Enter name">
+        </div>
+        <div class="form-group">
+          <label for="price">Password:</label>
+          <input type="password" #price (ngModel)="price" name="price" id="price" class="form-control"
+            placeholder="Enter price">
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Login" class="btn btn-primary w-100">
+        </div>
+      </form>
+    </div>
+    </div>
+
